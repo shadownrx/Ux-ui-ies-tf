@@ -1,0 +1,269 @@
+/* ============================================================
+   Rediseño UX/UI — IESTV Tucumán (Aula Virtual)
+   Todo el estilo vive bajo html.uxui-enabled para poder
+   desactivarse por completo desde el popup sin recargar.
+   ============================================================ */
+
+html.uxui-enabled {
+  --uxui-bg: #f4f6fb;
+  --uxui-surface: #ffffff;
+  --uxui-text: #1c2430;
+  --uxui-text-muted: #5b6472;
+  --uxui-border: #dde3ee;
+  --uxui-primary: #14406e;
+  --uxui-primary-dark: #0d2c4c;
+  --uxui-accent: #0a9696;
+  --uxui-danger: #c0392b;
+  --uxui-focus: #ffaa3c;
+  --uxui-radius: 12px;
+  --uxui-shadow: 0 4px 18px rgba(20, 40, 70, 0.10);
+  --uxui-font: "Segoe UI", "Inter", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --uxui-scale: 1;
+}
+
+html.uxui-enabled[data-uxui-theme="dark"] {
+  --uxui-bg: #10151c;
+  --uxui-surface: #1a212b;
+  --uxui-text: #e7ecf3;
+  --uxui-text-muted: #a3adba;
+  --uxui-border: #2a3341;
+  --uxui-primary: #4d8ddb;
+  --uxui-primary-dark: #7bb0f2;
+  --uxui-accent: #35c7c7;
+  --uxui-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Base */
+html.uxui-enabled,
+html.uxui-enabled body {
+  background: var(--uxui-bg) !important;
+  color: var(--uxui-text) !important;
+  font-family: var(--uxui-font) !important;
+  font-size: calc(15px * var(--uxui-scale));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.uxui-enabled * {
+  scrollbar-color: var(--uxui-border) transparent;
+}
+
+html.uxui-enabled body,
+html.uxui-enabled td,
+html.uxui-enabled th,
+html.uxui-enabled div,
+html.uxui-enabled span,
+html.uxui-enabled p,
+html.uxui-enabled font {
+  font-family: var(--uxui-font) !important;
+  color: var(--uxui-text);
+}
+
+html.uxui-enabled a {
+  color: var(--uxui-primary);
+  text-decoration: none;
+}
+html.uxui-enabled a:hover {
+  text-decoration: underline;
+  color: var(--uxui-accent);
+}
+
+html.uxui-enabled h1,
+html.uxui-enabled h2,
+html.uxui-enabled h3 {
+  color: var(--uxui-primary);
+  font-weight: 700;
+}
+
+/* Tablas de estructura heredadas: se limpian bordes/colores duros
+   pero se conserva el layout para no romper el maquetado original */
+html.uxui-enabled table {
+  border-collapse: collapse;
+}
+html.uxui-enabled table[bgcolor],
+html.uxui-enabled td[bgcolor] {
+  background: transparent !important;
+}
+html.uxui-enabled table[border] {
+  border: none !important;
+}
+
+/* Encabezado flotante con el nombre de la institución */
+.uxui-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(120deg, var(--uxui-primary), var(--uxui-primary-dark));
+  color: #fff;
+  box-shadow: var(--uxui-shadow);
+  font-family: var(--uxui-font);
+}
+.uxui-topbar__title {
+  font-weight: 700;
+  font-size: calc(15px * var(--uxui-scale));
+  letter-spacing: .2px;
+}
+.uxui-topbar__spacer { flex: 1; }
+.uxui-topbar__pill {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.35);
+}
+
+/* Tarjeta que envuelve formularios (login, contacto, etc.) */
+html.uxui-enabled .uxui-card {
+  background: var(--uxui-surface) !important;
+  border: 1px solid var(--uxui-border);
+  border-radius: var(--uxui-radius);
+  box-shadow: var(--uxui-shadow);
+  padding: 28px clamp(18px, 4vw, 40px);
+  max-width: 460px;
+  margin: 48px auto;
+}
+
+html.uxui-enabled .uxui-card table,
+html.uxui-enabled .uxui-card tr,
+html.uxui-enabled .uxui-card td {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Campos de formulario */
+html.uxui-enabled input[type="text"],
+html.uxui-enabled input[type="password"],
+html.uxui-enabled input[type="email"],
+html.uxui-enabled input[type="search"],
+html.uxui-enabled input[type="number"],
+html.uxui-enabled input:not([type]),
+html.uxui-enabled select,
+html.uxui-enabled textarea {
+  font-family: var(--uxui-font) !important;
+  font-size: calc(14px * var(--uxui-scale)) !important;
+  color: var(--uxui-text) !important;
+  background: var(--uxui-surface) !important;
+  border: 1.5px solid var(--uxui-border) !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color .15s ease, box-shadow .15s ease;
+  margin: 4px 0;
+}
+
+html.uxui-enabled input:focus,
+html.uxui-enabled select:focus,
+html.uxui-enabled textarea:focus {
+  outline: none !important;
+  border-color: var(--uxui-accent) !important;
+  box-shadow: 0 0 0 3px rgba(10, 150, 150, 0.18) !important;
+}
+
+html.uxui-enabled .uxui-field {
+  position: relative;
+  margin-bottom: 14px;
+}
+html.uxui-enabled .uxui-field__label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--uxui-text-muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 4px;
+}
+
+/* Botón para mostrar/ocultar contraseña */
+.uxui-pw-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--uxui-text-muted);
+  padding: 4px 6px;
+}
+.uxui-pw-toggle:hover { color: var(--uxui-primary); }
+
+/* Botones / submit */
+html.uxui-enabled input[type="submit"],
+html.uxui-enabled input[type="button"],
+html.uxui-enabled button,
+html.uxui-enabled .uxui-btn {
+  font-family: var(--uxui-font) !important;
+  font-weight: 600 !important;
+  font-size: calc(14px * var(--uxui-scale)) !important;
+  color: #fff !important;
+  background: linear-gradient(120deg, var(--uxui-primary), var(--uxui-accent)) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 11px 20px !important;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(20, 64, 110, 0.25);
+  transition: transform .1s ease, box-shadow .15s ease, filter .15s ease;
+  width: 100%;
+}
+html.uxui-enabled input[type="submit"]:hover,
+html.uxui-enabled input[type="button"]:hover,
+html.uxui-enabled button:hover,
+html.uxui-enabled .uxui-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 12px rgba(20, 64, 110, 0.32);
+}
+html.uxui-enabled input[type="submit"]:active,
+html.uxui-enabled button:active {
+  transform: translateY(1px);
+}
+
+/* Botón flotante de encendido/apagado del rediseño */
+#uxui-fab {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--uxui-primary-dark, #0d2c4c);
+  color: #fff;
+  font-family: var(--uxui-font);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  cursor: pointer;
+  border: none;
+}
+#uxui-fab:hover { filter: brightness(1.1); }
+
+/* Mensajes de error/aviso del sistema original, resaltados */
+html.uxui-enabled .uxui-alert {
+  background: #fdecea;
+  border: 1px solid #f3c2bd;
+  color: var(--uxui-danger);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  margin-bottom: 14px;
+}
+html.uxui-enabled[data-uxui-theme="dark"] .uxui-alert {
+  background: #3a1f1c;
+  border-color: #5c2b26;
+  color: #ff9c8f;
+}
+
+@media (max-width: 520px) {
+  html.uxui-enabled .uxui-card {
+    margin: 16px 10px;
+    padding: 20px;
+  }
+}

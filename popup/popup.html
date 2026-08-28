@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Rediseño UX/UI</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="popup-header">
+    <span class="popup-header__dot"></span>
+    <div>
+      <h1>Rediseño UX/UI</h1>
+      <p>Aula Virtual · IESTV Tucumán</p>
+    </div>
+  </header>
+
+  <section class="popup-row">
+    <label class="switch">
+      <input type="checkbox" id="enabled" />
+      <span class="switch__track"><span class="switch__thumb"></span></span>
+    </label>
+    <div>
+      <strong>Activar rediseño</strong>
+      <p class="popup-hint">Apagalo para ver la web tal cual es.</p>
+    </div>
+  </section>
+
+  <section class="popup-row popup-row--stack">
+    <strong>Tema</strong>
+    <div class="segmented" id="theme">
+      <button type="button" data-value="light">Claro</button>
+      <button type="button" data-value="dark">Oscuro</button>
+      <button type="button" data-value="auto">Auto</button>
+    </div>
+  </section>
+
+  <section class="popup-row popup-row--stack">
+    <strong>Tamaño de texto</strong>
+    <input type="range" id="fontScale" min="0.9" max="1.35" step="0.05" />
+  </section>
+
+  <button type="button" id="reset" class="reset-btn">Restablecer valores</button>
+
+  <footer class="popup-footer">
+    Extensión no oficial, solo cambia la apariencia visual en tu navegador.
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
