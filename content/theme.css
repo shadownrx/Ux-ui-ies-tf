@@ -196,7 +196,7 @@ html.uxui-enabled .uxui-field__label {
 /* Botones / submit */
 html.uxui-enabled input[type="submit"],
 html.uxui-enabled input[type="button"],
-html.uxui-enabled button,
+html.uxui-enabled button:not(.uxui-pw-toggle):not(#uxui-fab),
 html.uxui-enabled .uxui-btn {
   font-family: var(--uxui-font) !important;
   font-weight: 600 !important;
@@ -213,13 +213,13 @@ html.uxui-enabled .uxui-btn {
 }
 html.uxui-enabled input[type="submit"]:hover,
 html.uxui-enabled input[type="button"]:hover,
-html.uxui-enabled button:hover,
+html.uxui-enabled button:not(.uxui-pw-toggle):not(#uxui-fab):hover,
 html.uxui-enabled .uxui-btn:hover {
   filter: brightness(1.08);
   box-shadow: 0 4px 12px rgba(20, 64, 110, 0.32);
 }
 html.uxui-enabled input[type="submit"]:active,
-html.uxui-enabled button:active {
+html.uxui-enabled button:not(.uxui-pw-toggle):not(#uxui-fab):active {
   transform: translateY(1px);
 }
 
