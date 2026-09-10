@@ -315,6 +315,78 @@ html.uxui-enabled .uxui-password-wrapper input[type="text"] {
   padding-right: 72px !important;
 }
 
+html.uxui-enabled .busqueda {
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100% !important;
+  padding: 4px 0 12px;
+  background: transparent !important;
+}
+
+html.uxui-enabled .busqueda > div,
+html.uxui-enabled .busqueda fieldset,
+html.uxui-enabled .busqueda .line {
+  display: flex !important;
+  align-items: center;
+  float: none !important;
+  width: auto !important;
+  gap: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+html.uxui-enabled .busqueda .label {
+  display: flex !important;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 10px;
+  color: var(--uxui-text-muted) !important;
+  background: var(--uxui-surface) !important;
+  border: 1px solid var(--uxui-border) !important;
+  border-right: 0 !important;
+  border-radius: 8px 0 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+html.uxui-enabled .busqueda .control,
+html.uxui-enabled .busqueda input,
+html.uxui-enabled .busqueda select {
+  height: 38px !important;
+  min-width: 0;
+  margin: 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+html.uxui-enabled .busqueda .inputTextLargo,
+html.uxui-enabled .busqueda input[type="search"],
+html.uxui-enabled .busqueda input[type="text"] {
+  width: 150px !important;
+  padding: 0 12px !important;
+  border-radius: 8px 0 0 8px !important;
+}
+
+html.uxui-enabled .busqueda input[type="submit"],
+html.uxui-enabled .busqueda input[type="button"],
+html.uxui-enabled .busqueda button {
+  width: auto !important;
+  min-width: 56px;
+  height: 38px !important;
+  margin: 0 !important;
+  padding: 0 16px !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+html.uxui-enabled .busqueda .selectSimple,
+html.uxui-enabled .busqueda select {
+  width: auto !important;
+  min-width: 118px;
+  padding: 0 28px 0 12px !important;
+}
+
 html.uxui-enabled .uxui-field {
   position: relative;
   margin-bottom: 14px;
@@ -439,6 +511,23 @@ html.uxui-enabled[data-uxui-theme="dark"] .uxui-alert {
 
   html.uxui-enabled .caja_inicio_sesion {
     padding: 20px !important;
+  }
+
+  html.uxui-enabled .busqueda {
+    align-items: stretch;
+  }
+
+  html.uxui-enabled .busqueda > div,
+  html.uxui-enabled .busqueda fieldset,
+  html.uxui-enabled .busqueda .line {
+    flex: 1 1 100%;
+  }
+
+  html.uxui-enabled .busqueda .inputTextLargo,
+  html.uxui-enabled .busqueda input[type="search"],
+  html.uxui-enabled .busqueda input[type="text"] {
+    flex: 1;
+    width: auto !important;
   }
 }
 
