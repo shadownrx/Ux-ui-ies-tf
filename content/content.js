@@ -40,7 +40,7 @@
     scope.querySelectorAll('input[type="password"]:not([data-uxui-pw])').forEach((input) => {
       const parent = input.parentElement;
       const hasExistingToggle = parent && parent.querySelector(
-        'button, a, input[type="button"], input[type="image"]'
+        'button, a, input[type="button"], input[type="image"], .passwd_visibility_login'
       );
       if (hasExistingToggle) return;
 
@@ -82,6 +82,13 @@
   }
 
   function addTopbar() {
+    const nativeTopbar = document.querySelector(".layout > .topbar, body > .topbar");
+    if (nativeTopbar) {
+      const injectedTopbar = document.querySelector(".uxui-topbar");
+      if (injectedTopbar) injectedTopbar.remove();
+      nativeTopbar.classList.add("uxui-native-topbar");
+      return;
+    }
     if (document.querySelector(".uxui-topbar")) return;
     const bar = document.createElement("div");
     bar.className = "uxui-topbar";

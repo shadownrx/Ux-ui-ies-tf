@@ -59,6 +59,55 @@ html.uxui-enabled font {
   color: var(--uxui-text);
 }
 
+html.uxui-enabled body.frontend {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(10, 150, 150, .08), transparent 28rem),
+    var(--uxui-bg) !important;
+}
+
+html.uxui-enabled .main-content,
+html.uxui-enabled #section,
+html.uxui-enabled #main {
+  background: transparent !important;
+}
+
+html.uxui-enabled .layout {
+  background: var(--uxui-bg) !important;
+}
+
+html.uxui-enabled .main-content {
+  padding: 18px clamp(16px, 2.5vw, 34px) 36px;
+}
+
+html.uxui-enabled .icon-sidebar {
+  box-shadow: 4px 0 18px rgba(20, 40, 70, .12);
+}
+
+html.uxui-enabled .topbar.uxui-native-topbar {
+  background: linear-gradient(110deg, #123b67 0%, #145b78 58%, #0a9696 100%) !important;
+  border-bottom: 0 !important;
+  box-shadow: 0 3px 16px rgba(20, 40, 70, .18);
+}
+
+html.uxui-enabled .topbar.uxui-native-topbar a,
+html.uxui-enabled .topbar.uxui-native-topbar span,
+html.uxui-enabled .topbar.uxui-native-topbar i {
+  color: #fff !important;
+}
+
+html.uxui-enabled .topbar.uxui-native-topbar a:hover {
+  color: #d9ffff !important;
+}
+
+html.uxui-enabled #wrapper {
+  width: min(100% - 32px, 1280px);
+  margin: 0 auto;
+}
+
+html.uxui-enabled #encabezado {
+  padding: 18px 0 14px;
+}
+
 html.uxui-enabled a {
   color: var(--uxui-primary);
   text-decoration: none;
@@ -106,6 +155,7 @@ html.uxui-enabled table[border] {
   font-weight: 700;
   font-size: calc(15px * var(--uxui-scale));
   letter-spacing: .2px;
+  color: #fff !important;
 }
 .uxui-topbar__spacer { flex: 1; }
 .uxui-topbar__pill {
@@ -114,6 +164,13 @@ html.uxui-enabled table[border] {
   border-radius: 999px;
   background: rgba(255,255,255,.16);
   border: 1px solid rgba(255,255,255,.35);
+  color: #fff !important;
+}
+
+html.uxui-enabled .uxui-topbar {
+  min-height: 48px;
+  padding-inline: clamp(16px, 3vw, 36px);
+  background: linear-gradient(110deg, #123b67 0%, #145b78 58%, #0a9696 100%);
 }
 
 /* Tarjeta que envuelve formularios (login, contacto, etc.) */
@@ -132,6 +189,75 @@ html.uxui-enabled .uxui-card tr,
 html.uxui-enabled .uxui-card td {
   background: transparent !important;
   border: none !important;
+}
+
+/* Formulario original de la plataforma: se conserva su estructura,
+   pero se ordenan iconos, campos y acciones como un bloque único. */
+html.uxui-enabled #menu_login,
+html.uxui-enabled .container_caja_inicio_sesion {
+  width: min(100%, 440px);
+  margin-inline: auto;
+}
+
+html.uxui-enabled .caja_inicio_sesion {
+  background: var(--uxui-surface) !important;
+  border: 1px solid var(--uxui-border) !important;
+  border-radius: var(--uxui-radius) !important;
+  box-shadow: var(--uxui-shadow) !important;
+  padding: 26px !important;
+}
+
+html.uxui-enabled .form_line {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 0 16px !important;
+}
+
+html.uxui-enabled .wrapper_icon_input {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+html.uxui-enabled .wrapper_icon_input > .login_user,
+html.uxui-enabled .wrapper_icon_input > .login_pass {
+  display: grid;
+  flex: 0 0 42px;
+  place-items: center;
+  color: #fff !important;
+  background: var(--uxui-primary) !important;
+  border-radius: 8px 0 0 8px;
+}
+
+html.uxui-enabled .wrapper_icon_input > input {
+  flex: 1;
+  width: auto !important;
+  min-width: 0;
+  margin: 0 !important;
+  border-radius: 0 8px 8px 0 !important;
+}
+
+html.uxui-enabled #passwd_visibility_login {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--uxui-text-muted) !important;
+  cursor: pointer;
+}
+
+html.uxui-enabled #wClaveUsuarioPlana {
+  padding-right: 42px !important;
+}
+
+html.uxui-enabled .submit_line {
+  margin-top: 6px;
+}
+
+html.uxui-enabled .permanecer_logueado {
+  margin-top: 12px;
+  color: var(--uxui-text-muted);
 }
 
 /* Campos de formulario */
