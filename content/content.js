@@ -38,8 +38,15 @@
 
   function enhancePasswordFields(scope) {
     scope.querySelectorAll('input[type="password"]:not([data-uxui-pw])').forEach((input) => {
+      const parent = input.parentElement;
+      const hasExistingToggle = parent && parent.querySelector(
+        'button, a, input[type="button"], input[type="image"]'
+      );
+      if (hasExistingToggle) return;
+
       input.dataset.uxuiPw = "1";
       const wrapper = document.createElement("span");
+      wrapper.className = "uxui-password-wrapper";
       wrapper.style.position = "relative";
       wrapper.style.display = "inline-block";
       wrapper.style.width = "100%";

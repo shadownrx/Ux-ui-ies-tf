@@ -100,10 +100,13 @@ body {
 }
 .segmented button {
   flex: 1;
+  min-width: 0;
   border: none;
   background: transparent;
   padding: 7px 0;
   font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
   cursor: pointer;
   color: var(--p-text);
 }
@@ -117,6 +120,7 @@ input[type="range"] { width: 100%; }
 
 .reset-btn {
   width: 100%;
+  min-height: 36px;
   margin-top: 12px;
   padding: 9px;
   border: 1px solid var(--p-border);
@@ -124,6 +128,9 @@ input[type="range"] { width: 100%; }
   background: #f5f7fb;
   color: var(--p-text);
   font-size: 12.5px;
+  line-height: 1.2;
+  white-space: normal;
+  overflow-wrap: anywhere;
   cursor: pointer;
 }
 .reset-btn:hover { background: #eceff5; }

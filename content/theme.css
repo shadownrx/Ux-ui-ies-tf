@@ -164,6 +164,11 @@ html.uxui-enabled textarea:focus {
   box-shadow: 0 0 0 3px rgba(10, 150, 150, 0.18) !important;
 }
 
+html.uxui-enabled .uxui-password-wrapper input[type="password"],
+html.uxui-enabled .uxui-password-wrapper input[type="text"] {
+  padding-right: 72px !important;
+}
+
 html.uxui-enabled .uxui-field {
   position: relative;
   margin-bottom: 14px;
