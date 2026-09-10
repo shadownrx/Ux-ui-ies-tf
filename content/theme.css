@@ -75,12 +75,32 @@ html.uxui-enabled .layout {
   background: var(--uxui-bg) !important;
 }
 
+html.uxui-enabled {
+  --icon-sidebar-bg: #123b67;
+  --icon-sidebar-hover-bg: #145b78;
+  --icon-sidebar-selected-bg: #0a9696;
+  --icon-sidebar-text: #eaf7ff;
+  --topbar-bg: #123b67;
+  --topbar-text: #fff;
+  --topbar-border: transparent;
+}
+
 html.uxui-enabled .main-content {
   padding: 18px clamp(16px, 2.5vw, 34px) 36px;
 }
 
 html.uxui-enabled .icon-sidebar {
   box-shadow: 4px 0 18px rgba(20, 40, 70, .12);
+}
+
+html.uxui-enabled .icon-nav-item {
+  min-height: 48px;
+  border-left-width: 3px;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+
+html.uxui-enabled .icon-nav-item.selected {
+  border-left-color: #fff;
 }
 
 html.uxui-enabled .topbar.uxui-native-topbar {
@@ -349,6 +369,17 @@ html.uxui-enabled .uxui-btn:hover {
   filter: brightness(1.08);
   box-shadow: 0 4px 12px rgba(20, 64, 110, 0.32);
 }
+
+html.uxui-enabled button:not(.uxui-pw-toggle):not(#uxui-fab) {
+  width: auto;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+html.uxui-enabled .submit_line input[type="submit"],
+html.uxui-enabled input.uxui-btn {
+  width: 100%;
+}
 html.uxui-enabled input[type="submit"]:active,
 html.uxui-enabled button:not(.uxui-pw-toggle):not(#uxui-fab):active {
   transform: translateY(1px);
@@ -393,8 +424,30 @@ html.uxui-enabled[data-uxui-theme="dark"] .uxui-alert {
 }
 
 @media (max-width: 520px) {
+  html.uxui-enabled .main-content {
+    padding: 12px 10px 28px;
+  }
+
+  html.uxui-enabled #wrapper {
+    width: 100%;
+  }
+
   html.uxui-enabled .uxui-card {
     margin: 16px 10px;
     padding: 20px;
+  }
+
+  html.uxui-enabled .caja_inicio_sesion {
+    padding: 20px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.uxui-enabled *,
+  html.uxui-enabled *::before,
+  html.uxui-enabled *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
   }
 }
